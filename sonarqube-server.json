@@ -11,7 +11,7 @@
     "secret_key": "{{user `aws_secret_key`}}",
     "region": "us-east-1",
     "source_ami": "ami-f652979b",
-    "instance_type": "t2.micro",
+    "instance_type": "t2.small",
     "ssh_username": "ubuntu",
     "ami_name": "packer-sonarqube {{timestamp}}",
     "vpc_id": "{{user `aws_vpc_id`}}",
