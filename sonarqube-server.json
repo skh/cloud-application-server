@@ -1,9 +1,7 @@
 {
   "variables": {
     "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-    "aws_vpc_id": "{{env `AWS_VPC_ID`}}",
-    "aws_subnet_id": "{{env `AWS_SUBNET_ID`}}"
+    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}"
   },
   "builders": [{
     "type": "amazon-ebs",
@@ -11,11 +9,9 @@
     "secret_key": "{{user `aws_secret_key`}}",
     "region": "us-east-1",
     "source_ami": "ami-f652979b",
-    "instance_type": "t2.small",
+    "instance_type": "t1.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "packer-sonarqube {{timestamp}}",
-    "vpc_id": "{{user `aws_vpc_id`}}",
-    "subnet_id": "{{user `aws_subnet_id`}}"
+    "ami_name": "packer-sonarqube {{timestamp}}"
   }],
   "provisioners": [{
     "type": "shell",
